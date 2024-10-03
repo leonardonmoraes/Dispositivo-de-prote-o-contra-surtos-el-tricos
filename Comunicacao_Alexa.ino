@@ -21,8 +21,8 @@ void firstLightChanged(uint8_t brightness);
 
 
 // conexao a wifi
-const char* ssid = "Leonardo_2.4";
-const char* password = "leonardo87";
+const char* ssid = "xxxx";
+const char* password = "xxxxx";
 
 boolean wifiConnected = false;
 
