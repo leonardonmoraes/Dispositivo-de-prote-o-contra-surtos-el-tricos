@@ -18,10 +18,9 @@ boolean connectWifi();
 
 //callback functions
 void firstLightChanged(uint8_t brightness);
-void secondLightChanged(uint8_t brightness);
-void thirdLightChanged(uint8_t brightness);
 
-// Change this!!
+
+// conexao a wifi
 const char* ssid = "Leonardo_2.4";
 const char* password = "leonardo87";
 
@@ -42,9 +41,8 @@ void setup()
   
   if(wifiConnected){
     
-    // Define your devices here. 
-    //espalexa.addDevice("Light 1", firstLightChanged); //simplest definition, default state off
-    //espalexa.addDevice("Light 2", secondLightChanged, 255); //third parameter is beginning state (here fully on)
+    // definir o dispositivo aqui. 
+
     espalexa.addDevice("Sistema de Proteção", firstLightChanged); //
 
     device3 = new EspalexaDevice("Light 3", thirdLightChanged); //you can also create the Device objects yourself like here
@@ -75,15 +73,7 @@ void firstLightChanged(uint8_t brightness) {
     
     //do what you need to do here
     digitalWrite(pinRele, brightness);
-
-    //EXAMPLE
-    if (brightness) {
-      Serial.print("ON, brightness ");
-      Serial.println(brightness);
-    }
-    else  {
-      Serial.println("OFF");
-    }
+   
 }
 
 void secondLightChanged(uint8_t brightness) {
